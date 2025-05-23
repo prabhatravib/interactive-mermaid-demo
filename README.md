@@ -4,7 +4,7 @@
 
 > Transform static Mermaid diagrams into clickable, interactive experiences
 
-## 🚀 [**Live Demo**](https://yourusername.github.io/interactive-mermaid-demo)
+## 🚀 [**Live Demo**](https://[https://prabhatravib.github.io/])
 
 This repository demonstrates a breakthrough technique for making Mermaid flowcharts fully interactive. Click on any blue action node in the flowchart to smoothly scroll to detailed content sections.
 
