@@ -216,4 +216,102 @@ class FlowchartInteractionHandler {
         const element = document.querySelector(sectionId);
         if (!element) {
             console.warn(`❌ Section not found: ${sectionId}`);
-            return
+            return;
+        }
+        
+        // Smooth scroll to element
+        element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start',
+            inline: 'nearest'
+        });
+        
+        // Add highlight effect
+        this.highlightSection(element);
+        
+        console.log(`✅ Scrolled to section: ${sectionId}`);
+    }
+    
+    /**
+     * Add temporary highlight effect to section
+     */
+    highlightSection(element) {
+        // Apply highlight styles
+        element.style.backgroundColor = '#fff3cd';
+        element.style.borderLeftColor = '#ffc107';
+        element.style.transform = 'scale(1.01)';
+        element.style.boxShadow = '0 4px 15px rgba(255, 193, 7, 0.2)';
+        
+        // Remove highlight after delay
+        setTimeout(() => {
+            element.style.backgroundColor = '';
+            element.style.borderLeftColor = '#28a745';
+            element.style.transform = '';
+            element.style.boxShadow = '';
+        }, 3000);
+        
+        console.log('✨ Section highlighted');
+    }
+    
+    /**
+     * Debug method to log current state
+     */
+    debug() {
+        console.log('🐛 Debug Info:');
+        console.log('- Flowchart nodes:', this.getFlowchartNodes().length);
+        console.log('- Node mapping:', this.nodeToSectionMap);
+        console.log('- Clickable nodes:', document.querySelectorAll('.clickable-node').length);
+    }
+}
+
+/**
+ * Utility function for manual testing
+ * Usage: testScroll('#power-connection')
+ */
+window.testScroll = function(sectionId) {
+    const handler = window.flowchartHandler;
+    if (handler) {
+        handler.scrollToSection(sectionId);
+    } else {
+        console.warn('Flowchart handler not initialized');
+    }
+};
+
+/**
+ * Initialize when DOM is ready
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Initializing Interactive Mermaid Flowchart...');
+    
+    // Create global instance for debugging
+    window.flowchartHandler = new FlowchartInteractionHandler();
+    
+    // Add debug method to console
+    window.debugFlowchart = () => window.flowchartHandler.debug();
+    
+    console.log('✅ Interactive Flowchart Handler initialized');
+    console.log('💡 Try: debugFlowchart() or testScroll("#power-connection")');
+});
+
+/**
+ * Handle page visibility changes to reinitialize if needed
+ */
+document.addEventListener('visibilitychange', function() {
+    if (!document.hidden && window.flowchartHandler) {
+        // Recheck click handlers when page becomes visible
+        setTimeout(() => {
+            const clickableNodes = document.querySelectorAll('.clickable-node');
+            if (clickableNodes.length === 0) {
+                console.log('🔄 Reinitializing click handlers...');
+                window.flowchartHandler.setupClickHandlers();
+            }
+        }, 1000);
+    }
+});
+
+/**
+ * Export for module usage
+ */
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = FlowchartInteractionHandler;
+}
