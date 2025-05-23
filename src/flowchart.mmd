@@ -1,0 +1,52 @@
+flowchart TD
+    A[Computer Will Not Start] --> B{Any lights or sounds}
+    
+    B -->|No| C[Check power connection]
+    C --> D{Power cable secure}
+    D -->|No| E[Reconnect power cable]
+    D -->|Yes| F[Test different outlet]
+    F --> G{Working now}
+    G -->|No| H[Replace power supply]
+    G -->|Yes| I[Power issue resolved]
+    
+    B -->|Yes| J{Does it beep}
+    J -->|Yes| K[Count beep pattern]
+    K --> L[Look up beep code]
+    L --> M[Replace indicated component]
+    
+    J -->|No| N{Fans spinning}
+    N -->|No| O[Check internal connections]
+    O --> P[Reseat RAM and cables]
+    
+    N -->|Yes| Q{Display showing}
+    Q -->|No| R[Test different monitor]
+    R --> S{Display works now}
+    S -->|Yes| T[Monitor was faulty]
+    S -->|No| U[Graphics card issue]
+    
+    Q -->|Yes| V{Boot process starts}
+    V -->|No| W[Check boot device order]
+    W --> X[Run hardware diagnostics]
+    
+    V -->|Yes| Y{OS loads completely}
+    Y -->|No| Z[Boot from recovery media]
+    Z --> AA[Repair or reinstall OS]
+    Y -->|Yes| BB[Intermittent issue monitor]
+    
+    E --> G
+    H --> BB
+    M --> BB
+    P --> N
+    U --> BB
+    X --> BB
+    AA --> BB
+
+    classDef startNode fill:#ffcccc,stroke:#d63384,stroke-width:3px
+    classDef actionNode fill:#d1ecf1,stroke:#0dcaf0,stroke-width:2px
+    classDef decisionNode fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+    classDef successNode fill:#d4edda,stroke:#198754,stroke-width:2px
+    
+    class A startNode
+    class C,E,F,H,K,L,M,O,P,R,U,W,X,Z,AA actionNode
+    class B,D,G,J,N,Q,S,V,Y decisionNode
+    class I,T,BB successNode
