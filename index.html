@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Mermaid Demo - Computer Troubleshooting</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.6.1/mermaid.min.js"></script>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Interactive Mermaid Flowchart Demo</h1>
+            <p class="subtitle">Computer Troubleshooting Guide</p>
+            <div class="github-link">
+                <a href="https://github.com/yourusername/interactive-mermaid-demo" target="_blank">
+                    📂 View Source on GitHub
+                </a>
+            </div>
+        </header>
+        
+        <section class="intro">
+            <p>This demo showcases <strong>clickable Mermaid flowcharts</strong> - a breakthrough technique for making static diagrams interactive. When your computer fails to start, the problem usually falls into one of three categories: power issues, hardware failures, or software corruption.</p>
+        </section>
+
+        <section class="problem-overview">
+            <h2>Understanding the Problem</h2>
+            
+            <div class="problem-types">
+                <div class="problem-type">
+                    <h3>🔌 Power Issues</h3>
+                    <p>Most common culprits include faulty power supplies, loose connections, or dead batteries. Signs: no lights, no fan noise, or immediate shutdown.</p>
+                </div>
+                
+                <div class="problem-type">
+                    <h3>🔧 Hardware Failures</h3>
+                    <p>Defective components like RAM, hard drives, or motherboards. Often produce error beeps, unusual sounds, or partial startup failures.</p>
+                </div>
+                
+                <div class="problem-type">
+                    <h3>💾 Software Problems</h3>
+                    <p>Corrupted operating system or boot files. Computer powers on normally but fails to load the OS or gets stuck on startup screens.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="interactive-section">
+            <h2>Interactive Troubleshooting Process</h2>
+            
+            <div class="highlight">
+                <strong>💡 Innovation Demo:</strong> Click directly on any blue action node in the flowchart below to jump to detailed instructions!
+            </div>
+            
+            <div class="feature-callouts">
+                <div class="feature">🎯 <strong>Blue nodes</strong> are clickable action steps</div>
+                <div class="feature">🟡 <strong>Yellow nodes</strong> are decision points</div>
+                <div class="feature">✨ <strong>Hover effects</strong> show interactive elements</div>
+                <div class="feature">📱 <strong>Smooth scrolling</strong> to relevant content</div>
+            </div>
+
+            <div class="flowchart-container">
+                <div class="mermaid" id="troubleshoot-flowchart">
+                    flowchart TD
+                        A[Computer Will Not Start] --> B{Any lights or sounds}
+                        
+                        B -->|No| C[Check power connection]
+                        C --> D{Power cable secure}
+                        D -->|No| E[Reconnect power cable]
+                        D -->|Yes| F[Test different outlet]
+                        F --> G{Working now}
+                        G -->|No| H[Replace power supply]
+                        G -->|Yes| I[Power issue resolved]
+                        
+                        B -->|Yes| J{Does it beep}
+                        J -->|Yes| K[Count beep pattern]
+                        K --> L[Look up beep code]
+                        L --> M[Replace indicated component]
+                        
+                        J -->|No| N{Fans spinning}
+                        N -->|No| O[Check internal connections]
+                        O --> P[Reseat RAM and cables]
+                        
+                        N -->|Yes| Q{Display showing}
+                        Q -->|No| R[Test different monitor]
+                        R --> S{Display works now}
+                        S -->|Yes| T[Monitor was faulty]
+                        S -->|No| U[Graphics card issue]
+                        
+                        Q -->|Yes| V{Boot process starts}
+                        V -->|No| W[Check boot device order]
+                        W --> X[Run hardware diagnostics]
+                        
+                        V -->|Yes| Y{OS loads completely}
+                        Y -->|No| Z[Boot from recovery media]
+                        Z --> AA[Repair or reinstall OS]
+                        Y -->|Yes| BB[Intermittent issue monitor]
+                        
+                        E --> G
+                        H --> BB
+                        M --> BB
+                        P --> N
+                        U --> BB
+                        X --> BB
+                        AA --> BB
+
+                        classDef startNode fill:#ffcccc,stroke:#d63384,stroke-width:3px
+                        classDef actionNode fill:#d1ecf1,stroke:#0dcaf0,stroke-width:2px
+                        classDef decisionNode fill:#fff3cd,stroke:#ffc107,stroke-width:2px
+                        classDef successNode fill:#d4edda,stroke:#198754,stroke-width:2px
+                        
+                        class A startNode
+                        class C,E,F,H,K,L,M,O,P,R,U,W,X,Z,AA actionNode
+                        class B,D,G,J,N,Q,S,V,Y decisionNode
+                        class I,T,BB successNode
+                </div>
+            </div>
+        </section>
+
+        <section class="methodology">
+            <h2>Diagnostic Methodology</h2>
+            <div class="methodology-grid">
+                <div class="method">
+                    <h3>🔍 Power Verification</h3>
+                    <p>Always start here. Ensure the power button activates the system. For laptops, verify battery isn't drained and try AC power alone.</p>
+                </div>
+                <div class="method">
+                    <h3>🔧 Hardware Isolation</h3>
+                    <p>Systematically test components. Remove unnecessary peripherals, test minimal RAM configuration, verify connections.</p>
+                </div>
+                <div class="method">
+                    <h3>💾 Software Recovery</h3>
+                    <p>Only after confirming hardware works. Use external media to test if the problem is software-related.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="instructions">
+            <h2>Detailed Step-by-Step Instructions</h2>
+            <p class="instructions-note">These sections are linked to the blue nodes in the flowchart above. Click any blue action step to jump directly here!</p>
+            
+            <div class="step-section" id="power-connection">
+                <h3>🔌 Check Power Connection</h3>
+                <p>Start by examining all power connections. For desktop computers, ensure the power cord is firmly connected to both the computer and the wall outlet. Check that any power strips or surge protectors are turned on and functioning. For laptops, verify the charging cable is properly connected and the charging indicator light is working.</p>
+            </div>
+
+            <div class="step-section" id="reconnect-power">
+                <h3>🔄 Reconnect Power Cable</h3>
+                <p>Unplug the power cable completely and wait 10 seconds. This allows any residual power to drain from the system. Reconnect the cable firmly, ensuring it clicks or seats properly. For laptops, try removing and reinserting the battery if possible, then connect the AC adapter.</p>
+            </div>
+
+            <div class="step-section" id="test-outlet">
+                <h3>⚡ Test Different Outlet</h3>
+                <p>Plug another device (like a lamp or phone charger) into the same outlet to verify it's working. If the outlet is dead, try a different one. For power strips, test the strip with another device or plug your computer directly into a wall outlet to eliminate the strip as a potential problem.</p>
+            </div>
+
+            <div class="step-section" id="replace-psu">
+                <h3>🔧 Replace Power Supply</h3>
+                <p>If you've confirmed the outlet works but your computer still shows no signs of life, the power supply unit (PSU) may be faulty. This requires technical skills - you'll need to disconnect all power cables inside the computer, remove the old PSU, and install a replacement with the same wattage and connector types.</p>
+            </div>
+
+            <div class="step-section" id="beep-codes">
+                <h3>🔊 Count Beep Pattern</h3>
+                <p>Computer beeps are diagnostic codes. Count the number of beeps and note the pattern (short beeps, long beeps, pauses between groups). Write down the exact sequence - for example: "3 short beeps, pause, 2 long beeps." Each motherboard manufacturer uses different beep codes.</p>
+            </div>
+
+            <div class="step-section" id="lookup-beep">
+                <h3>📋 Look Up Beep Code</h3>
+                <p>Search online for your computer's make and model plus "beep codes" or check your motherboard manual. Common patterns: 1 long + 2 short beeps often indicates graphics card issues, while continuous beeping usually means RAM problems. The beep code will tell you which component to focus on.</p>
+            </div>
+
+            <div class="step-section" id="replace-component">
+                <h3>🔧 Replace Indicated Component</h3>
+                <p>Based on the beep code diagnosis, replace or reseat the faulty component. Most commonly this involves RAM (memory modules) or the graphics card. Always power off and unplug the computer before opening the case. Handle components carefully and ground yourself to prevent static damage.</p>
+            </div>
+
+            <div class="step-section" id="internal-connections">
+                <h3>🔍 Check Internal Connections</h3>
+                <p>Open the computer case and inspect all internal cables. Look for loose power connectors to the motherboard (24-pin main power and 4/8-pin CPU power), hard drive SATA and power cables, and RAM modules. Gently but firmly push all connections to ensure they're properly seated.</p>
+            </div>
+
+            <div class="step-section" id="reseat-components">
+                <h3>🔄 Reseat RAM and Cables</h3>
+                <p>Remove RAM modules by opening the retention clips and pulling straight up. Clean the contacts with a soft cloth and reinsert firmly until the clips snap back into place. Do the same for the graphics card and any expansion cards. Reconnect all internal cables, ensuring they're fully inserted.</p>
+            </div>
+
+            <div class="step-section" id="test-monitor">
+                <h3>🖥️ Test Different Monitor</h3>
+                <p>Connect a different monitor or TV to your computer using the same cable type. If you have multiple video outputs (HDMI, DisplayPort, VGA), try different ports. Some computers default to integrated graphics instead of a dedicated graphics card, so try both motherboard and graphics card outputs.</p>
+            </div>
+
+            <div class="step-section" id="graphics-issue">
+                <h3>🎮 Graphics Card Issue</h3>
+                <p>If the monitor works with other devices but not your computer, the graphics card may be faulty. Try reseating the graphics card in its slot. If you have integrated graphics, remove the graphics card temporarily and connect the monitor to the motherboard's video output to test.</p>
+            </div>
+
+            <div class="step-section" id="boot-order">
+                <h3>⚙️ Check Boot Device Order</h3>
+                <p>Enter BIOS/UEFI setup (usually by pressing F2, F12, or Delete during startup). Navigate to the boot options and ensure your hard drive is listed and set as the primary boot device. If the drive isn't detected, check its power and data cable connections.</p>
+            </div>
+
+            <div class="step-section" id="hardware-diagnostics">
+                <h3>🔬 Run Hardware Diagnostics</h3>
+                <p>Many computers have built-in diagnostic tools accessible during startup (often F12 or F10). These tests can identify failing hard drives, bad RAM, or other hardware issues. You can also create bootable diagnostic tools like MemTest86 for RAM testing or manufacturer-specific utilities.</p>
+            </div>
+
+            <div class="step-section" id="recovery-media">
+                <h3>💾 Boot from Recovery Media</h3>
+                <p>Create a bootable USB drive or DVD with your operating system's recovery tools. Boot from this media to access repair options. For Windows, use the "Startup Repair" option. For Mac, boot into Recovery Mode. This can fix corrupted boot files without losing your data.</p>
+            </div>
+
+            <div class="step-section" id="repair-os">
+                <h3>🛠️ Repair or Reinstall OS</h3>
+                <p>If recovery tools don't work, you may need to reinstall the operating system. Back up important data first if possible. A clean OS installation often resolves persistent software issues but will require reinstalling programs and restoring data from backups.</p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="tech-info">
+                <h3>🚀 Technical Innovation</h3>
+                <p>This demo showcases a breakthrough in web UX: making Mermaid flowcharts fully interactive with vanilla JavaScript. No external frameworks required!</p>
+                
+                <div class="tech-stack">
+                    <span class="tech">Mermaid.js</span>
+                    <span class="tech">Vanilla JS</span>
+                    <span class="tech">CSS3</span>
+                    <span class="tech">HTML5</span>
+                </div>
+            </div>
+            
+            <div class="links">
+                <a href="https://github.com/yourusername/interactive-mermaid-demo">GitHub Repository</a>
+                <a href="docs/how-it-works.html">How It Works</a>
+                <a href="docs/implementation.html">Implementation Guide</a>
+            </div>
+        </footer>
+    </div>
+
+    <script src="src/js/flowchart-interactions.js"></script>
+</body>
+</html>
